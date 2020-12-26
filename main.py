@@ -100,8 +100,10 @@ window.onload = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(app.state.selectedSquares)
-    })
-    .then(res => { app.render(); });
+    }).then(res => {
+      app.state.selectedSquares = [];
+      app.render();
+    });
   });
 }
 
