@@ -8,16 +8,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-game = pycheckers.CheckersGame.with_board(
-    {
-        (3, 6): pycheckers.CheckerPiece(
-            pycheckers.CheckerColor.RED, pycheckers.CheckerLevel.MAN
-        ),
-        (2, 7): pycheckers.CheckerPiece(
-            pycheckers.CheckerColor.BLACK, pycheckers.CheckerLevel.MAN
-        ),
-    }
-)
+game = pycheckers.initial_setup_board()
 
 style = """\
 <style>
