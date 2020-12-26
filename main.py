@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 game = pycheckers.CheckersGame.with_board(
     {
-        (1, 0): pycheckers.CheckerPiece(
+        (3, 6): pycheckers.CheckerPiece(
             pycheckers.CheckerColor.RED, pycheckers.CheckerLevel.MAN
         ),
         (2, 7): pycheckers.CheckerPiece(
@@ -139,7 +139,7 @@ def move():
     print(request.json)
     piece_pos = request.json[0]
     rest = request.json[1:]
-    game.move(*piece_pos, rest)
+    game.move(piece_pos, rest)
     return "done"
 
 
