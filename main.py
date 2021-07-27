@@ -28,8 +28,8 @@ circle.checker-red {
   stroke-width: 3;
   pointer-events: none;
 }
-circle.checker-black {
-  fill: black;
+circle.checker-white {
+  fill: white;
   stroke: black;
   stroke-width: 3;
   pointer-events: none;
