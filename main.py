@@ -131,6 +131,7 @@ def move():
     piece_pos = request.json[0]
     rest = request.json[1:]
     game.move(piece_pos, rest)
+    game.random_move()
     return "done"
 
 
