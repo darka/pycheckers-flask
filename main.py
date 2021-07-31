@@ -130,8 +130,15 @@ def move():
     print(request.json)
     piece_pos = request.json[0]
     rest = request.json[1:]
+
     game.move(piece_pos, rest)
-    game.random_move()
+
+    value, pos, moves = pycheckers.minimax(game, 4, True)
+    print(value, pos, moves)
+
+    if pos and moves:
+        game.move(pos, moves)
+
     return "done"
 
 
