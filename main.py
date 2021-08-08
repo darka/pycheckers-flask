@@ -2,6 +2,7 @@ import flask
 
 from flask import request
 import pycheckers
+from pycheckers.minimax import minimax
 import pycheckers.svg
 
 from flask import Flask
@@ -86,7 +87,7 @@ var app = new App();
 window.onload = () => {
   document.getElementById("move-button").addEventListener("click", function() {
     fetch("/move", {
-      method: "POST", 
+      method: "POST",
       headers: {
         'Content-Type': 'application/json'
       },
@@ -133,7 +134,7 @@ def move():
 
     game.move(piece_pos, rest)
 
-    value, pos, moves = pycheckers.minimax(game, 4, True)
+    value, pos, moves = minimax(game, 4, True)
     print(value, pos, moves)
 
     if pos and moves:
